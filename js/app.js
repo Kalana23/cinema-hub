@@ -8,7 +8,7 @@ const movies = [
     { id: 6, title: "Past Lives", year: 2023, rating: 8.0, genre: "Romance", badge: null, type: "movie", image: "images/past-lives.jpg" },
     { id: 7, title: "Anatomy of a Fall", year: 2023, rating: 7.8, genre: "Thriller", badge: "top", type: "movie", image: "images/anatomy-of-a-fall.jpg" },
     { id: 8, title: "The Holdovers", year: 2023, rating: 8.0, genre: "Comedy", badge: null, type: "movie", image: "images/the-holdovers.jpg" },
-    // Task 1 & 3: තවත් චිත්‍රපට 3ක් සහ "classic" badge එක (2000 ට පෙර) ඇතුළත් කිරීම
+    // Tasks 1 & 3: Added 3 more movies including "classic" badges for pre-2000 films
     { id: 9, title: "The Matrix", year: 1999, rating: 8.7, genre: "Sci-Fi", badge: "classic", type: "movie", image: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" },
     { id: 10, title: "Jurassic Park", year: 1993, rating: 8.2, genre: "Adventure", badge: "classic", type: "movie", image: "https://image.tmdb.org/t/p/w500/oU7Oq2kFAAlGqbU4VoAE36g4hoI.jpg" },
     { id: 11, title: "Gladiator", year: 2000, rating: 8.5, genre: "Action", badge: "top", type: "movie", image: "images/gladiator-2.jpg" }
@@ -24,7 +24,7 @@ const tvShows = [
     { id: 107, title: "Ted Lasso", year: 2020, rating: 8.8, genre: "Comedy", badge: null, type: "tv", image: "TV_Shows/ted-lasso.jpg" }
 ];
 
-// Step 2 & Task 2: getRatingClass - High threshold එක 8.0 සිට 8.5 ට වෙනස් කිරීම
+// Step 2 & Task 2: getRatingClass - Updated high threshold from 8.0 to 8.5
 function getRatingClass(rating) {
     if (rating >= 8.5) {
         return "high";   
@@ -35,7 +35,7 @@ function getRatingClass(rating) {
     }
 }
 
-// Step 3 & Task 3: getBadgeHTML - අලුත් "classic" badge එක එකතු කිරීම
+// Step 3 & Task 3: getBadgeHTML - Added the "classic" badge case
 function getBadgeHTML(badge) {
     const badgeStyles = "position: absolute; top: 10px; right: 25px; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; pointer-events: none;";
     switch (badge) {
@@ -52,7 +52,7 @@ function getBadgeHTML(badge) {
     }
 }
 
-// Step 4: createCardHTML - Badge එක පින්තූරය උඩින් පෙන්වීම
+// Step 4: createCardHTML - Renders badge over the movie/show image
 function createCardHTML(item) {
     const ratingClass = getRatingClass(item.rating);
     const badgeHTML = getBadgeHTML(item.badge);
@@ -66,7 +66,7 @@ function createCardHTML(item) {
     `;
 }
 
-// Step 5 & Task 4: renderCards - for loop එක වෙනුවට "while" loop එකක් භාවිතා කිරීම
+// Step 5 & Task 4: renderCards - Uses a "while" loop instead of a "for" loop
 function renderCards(dataArray, targetId) {
     const container = document.getElementById(targetId);
     if (!container) return; 
@@ -87,7 +87,7 @@ function renderCards(dataArray, targetId) {
 const currentPage = window.location.pathname.split("/").pop();
 
 if (currentPage === "index.html" || currentPage === "") {
-    // Task 5: Homepage challenge - 8.0 ට වැඩි ඒවා පමණක් if statement එකකින් පෙරා ගැනීම
+    // Task 5: Homepage challenge - Filtering movies with ratings higher than 8.0 using a while loop
     const highRatedMovies = [];
     let i = 0;
     while (i < movies.length) {

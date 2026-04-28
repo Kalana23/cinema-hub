@@ -462,3 +462,139 @@ body {
 .dev-link:hover {
     color: white;
 }
+
+/* =========================================================
+   Mobile Responsive Design (Media Queries)
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+    /* --- Navbar Adjustments --- */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        background: rgba(15, 15, 15, 0.95); /* Solid background for readability */
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* --- Hero Banner Adjustments --- */
+    .hero-banner {
+        /* Add more padding to the top so the stacked navbar doesn't hide text */
+        padding: 160px 20px 40px; 
+        background-position: center;
+    }
+
+    .hero-content h1 {
+        font-size: 35px; /* Smaller title for mobile */
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        max-width: 100%; /* Take full width on mobile */
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons */
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* --- Movie Rows Adjustments --- */
+    .movie-row {
+        padding: 10px 15px;
+    }
+
+    .movie-row h2 {
+        font-size: 18px;
+    }
+
+    .row-posters {
+        gap: 10px;
+        padding-bottom: 15px; /* Extra space for smooth touch scrolling */
+    }
+
+    .row-poster {
+        width: 120px; /* Smaller posters for mobile screens */
+    }
+
+    /* --- Details Pages (Dune & Breaking Bad Info) --- */
+    .info-container {
+        flex-direction: column; /* Stack poster and details */
+        padding: 140px 20px 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-poster {
+        width: 70%; /* Scale poster down */
+        margin-bottom: 25px;
+    }
+
+    .info-meta {
+        justify-content: center; /* Center the meta tags */
+        flex-wrap: wrap;
+    }
+
+    .info-cast-list {
+        text-align: left; /* Keep cast list readable */
+        font-size: 14px;
+    }
+
+    /* --- Watchlist Grid Adjustments --- */
+    .watchlist-grid {
+        grid-template-columns: repeat(2, 1fr); /* Show 2 columns on mobile */
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    /* --- Developer Badge Adjustments --- */
+    .dev-badge {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        border-radius: 20px;
+    }
+    
+    .dev-name {
+        font-size: 11px;
+    }
+    
+    .dev-name strong {
+        font-size: 11px;
+    }
+}
+
+/* --- Adjustments for Very Small Phones (e.g., iPhone SE) --- */
+@media screen and (max-width: 480px) {
+    .watchlist-grid {
+        grid-template-columns: 1fr; /* Show 1 column on very small screens */
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .info-poster {
+        width: 90%;
+    }
+}
